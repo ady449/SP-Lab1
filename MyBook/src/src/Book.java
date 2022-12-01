@@ -12,24 +12,23 @@ public class Book {
 
     @NonNull private final String name;
 
-    private List<String> paragraph = new ArrayList<>();
-    private List<String> table = new ArrayList<>();
-    private List<String> image = new ArrayList<>();
+    private Author author;
+    private List<Chapter> chapters = new ArrayList<>();
 
 
-    public void createNewParagraph(String paragraph1) {
-        this.paragraph.add(paragraph1);
+
+
+    public void addAuthor(Author rpGheo) {
+        author = rpGheo;
     }
 
-    public void createImage(String image1) {
-        this.image.add(image1);
+    public int createChapter(String s) {
+        Chapter ch = new Chapter(s);
+        chapters.add(ch);
+        return chapters.indexOf(ch);
     }
 
-    public void createTable(String table1) {
-        this.table.add(table1);
-    }
-
-    public void print() {
-        System.out.println(this);
+    public Chapter getChapter(int indexChapteOne) {
+        return chapters.get(indexChapteOne);
     }
 }
