@@ -1,20 +1,11 @@
 package src;
 
-public class Table implements Element{
-    private String table;
-
-    public Table(String table1) {
-        table = table1;
-    }
-
-    @Override
-    public String toString() {
-        return "Table: "+ table;
-    }
+public class TableOfContents implements Element {
+    String something = "adi";
 
     @Override
     public void print() {
-        System.out.println(table);
+
     }
 
     @Override

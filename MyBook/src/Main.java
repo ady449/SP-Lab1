@@ -1,29 +1,26 @@
-import src.Author;
-import src.Book;
-import src.Chapter;
-import src.SubChapter;
+import src.*;
 
 public class Main {
     public static void main(String[] args) {
-        Book discoTitanic = new Book("Disco Titanic");
+        Book noapteBuna = new Book("Noapte buna, copii!");
         Author rpGheo = new Author("Radu pavel Gheo");
+        noapteBuna.addAuthor(rpGheo);
 
-        discoTitanic.addAuthor(rpGheo);
-        int indexChapteOne = discoTitanic.createChapter("Capitolul 1");
-        Chapter chp1 = discoTitanic.getChapter(indexChapteOne);
 
-        int indexSubChapterOneOne = chp1.createSubChapter("Subcapitoul 1.1");
-        SubChapter scOneOne =chp1.getSubChapter(indexChapteOne);
-
-        scOneOne.createNewParagraph("Paragraph1");
-        scOneOne.createNewParagraph("Paragraph2");
-        scOneOne.createNewParagraph("Paragraph3");
-        scOneOne.createImage("image1");
-        scOneOne.createNewParagraph("Paragraph4");
-        scOneOne.createTable("table1");
-        scOneOne.createNewParagraph("Paragraph5");
-
-        scOneOne.print(); // output: Book(Disco Titanic, [Paragraph1, Paragraph2, Paragraph3, Paragraph4, Paragraph5], [table1], [image1])
+        Section cap1 = new Section("Capitolul 1");
+        Section cap11 = new Section("Capitolul 1.1");
+        Section cap111 = new Section("Capitolul 1.1.1");
+        Section cap1111 = new Section("Subchapter 1.1.1.1");
+        noapteBuna.addContent(new Paragraph("Multumesc celor care ..."));
+        noapteBuna.addContent(cap1);
+        cap1.add(new Paragraph("Moto capitol"));
+        cap1.add(cap11);
+        cap11.add(new Paragraph("Text from subchapter 1.1"));
+        cap11.add(cap111);
+        cap111.add(new Paragraph("Text from subchapter 1.1.1"));
+        cap111.add(cap1111);
+        cap1111.add(new Image("Image subchapter 1.1.1.1"));
+        noapteBuna.print();
 
     }
 }

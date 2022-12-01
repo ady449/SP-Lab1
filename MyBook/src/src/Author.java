@@ -7,4 +7,10 @@ import lombok.NonNull;
 public class Author {
     @NonNull
     private String name;
+
+    @Override
+    public String toString() {
+        return  "Author: "+ name+"\n";
+
+    }
 }

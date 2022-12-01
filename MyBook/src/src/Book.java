@@ -1,34 +1,32 @@
 package src;
 
-import lombok.*;
+import lombok.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
-@Data
-@ToString(includeFieldNames = false)
-public class Book {
-
-    @NonNull private final String name;
-
+public class Book extends Section {
     private Author author;
-    private List<Chapter> chapters = new ArrayList<>();
-
-
-
+    private List<Element> elements = new ArrayList<>();
 
     public void addAuthor(Author rpGheo) {
         author = rpGheo;
     }
 
-    public int createChapter(String s) {
-        Chapter ch = new Chapter(s);
-        chapters.add(ch);
-        return chapters.indexOf(ch);
+    public Book(@NonNull String name) {
+        super(name);
     }
 
-    public Chapter getChapter(int indexChapteOne) {
-        return chapters.get(indexChapteOne);
+    public void addContent(Element e) {
+        elements.add(e);
+    }
+
+    public void print() {
+        System.out.println("Book: "+ getName()
+                +"\n\nAuthors:\n"+author
+                +"\n" + elements.stream().map(Element::toString).collect(Collectors.joining("\n")));
+
     }
 }
