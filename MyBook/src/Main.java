@@ -27,5 +27,13 @@ public class Main {
         endTime = System.currentTimeMillis();
         System.out.println("Printing again the section 1 took " + (endTime -
                 startTime) + " milliseconds");
+        //output before:
+//        Creation of the content took 15430 milliseconds
+//        Printing of the section 1 took 55 milliseconds
+//        Printing again the section 1 took 0 milliseconds
+        //output dupa proxypattern
+        //Creation of the content took 4 milliseconds
+        //Printing of the section 1 took 21 milliseconds
+        //Printing again the section 1 took 0 milliseconds
     }
 }
