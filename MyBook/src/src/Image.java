@@ -7,22 +7,22 @@ import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 @Data
-public class Image implements Element, Picture{
+public class Image implements Element {
     @NonNull
     private String image;
 
     public Image(String name) {
-        image =name;
-        try{
+        image = name;
+        try {
             TimeUnit.SECONDS.sleep(5);
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
     @Override
     public String toString() {
-        return "Image: " + image ;
+        return "Image: " + image;
     }
 
     @Override
@@ -42,21 +42,6 @@ public class Image implements Element, Picture{
 
     @Override
     public Element get(int i) {
-        return null;
-    }
-
-    @Override
-    public String url() {
-        return null;
-    }
-
-    @Override
-    public Dimension dim() {
-        return null;
-    }
-
-    @Override
-    public PictureContent content() {
         return null;
     }
 }

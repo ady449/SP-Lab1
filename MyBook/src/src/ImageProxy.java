@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class ImageProxy implements Picture, Element {
+public class ImageProxy implements Element {
 
     @NonNull
     String url;
@@ -44,18 +44,5 @@ public class ImageProxy implements Picture, Element {
         return null;
     }
 
-    @Override
-    public String url() {
-        return null;
-    }
 
-    @Override
-    public Dimension dim() {
-        return null;
-    }
-
-    @Override
-    public PictureContent content() {
-        return null;
-    }
 }

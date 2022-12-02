@@ -3,6 +3,15 @@ package src;
 public class Paragraph implements Element {
     private String description;
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    private AlignStrategy textAlignment;
     public Paragraph(String paragraph1) {
         description = paragraph1;
     }
@@ -30,5 +39,9 @@ public class Paragraph implements Element {
     @Override
     public Element get(int i) {
         return null;
+    }
+
+    public void setAlignStrategy(AlignStrategy align) {
+        description = align + description;
     }
 }

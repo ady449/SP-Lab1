@@ -22,7 +22,7 @@ public class Section implements Element {
 
     @Override
     public void print() {
-        toString();
+        System.out.println(toString());
     }
 
     @Override
