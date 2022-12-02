@@ -4,27 +4,26 @@ import lombok.Data;
 import lombok.NonNull;
 
 import java.awt.*;
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
-public class Image implements Element, Picture{
+public class ImageProxy implements Picture, Element {
+
     @NonNull
-    private String image;
+    String url;
+    Dimension dim;
+    Image image;
+    List<Element> elements = new ArrayList<>();
 
-    public Image(String name) {
-        image =name;
-        try{
-            TimeUnit.SECONDS.sleep(5);
-        }catch (InterruptedException e){
-            e.printStackTrace();
+
+    public Image loadImage(){
+        if(image == null){
+            image = new Image(url);
         }
-    }
 
-    @Override
-    public String toString() {
-        return "Image: " + image ;
+        return image;
     }
-
     @Override
     public void print() {
 
