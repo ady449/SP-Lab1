@@ -1,1 +1,1 @@
-# Nota finala: 6
+# Nota finala: 7
