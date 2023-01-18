@@ -7,15 +7,19 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-public class ImageProxy implements Element {
+public class ImageProxy extends Image {
 
-    @NonNull
+
     String url;
     Dimension dim;
     Image image;
     List<Element> elements = new ArrayList<>();
 
+    public ImageProxy(String name){
+        super(name);
+        url = name;
+
+    }
 
     public Image loadImage(){
         if(image == null){
@@ -42,6 +46,11 @@ public class ImageProxy implements Element {
     @Override
     public Element get(int i) {
         return null;
+    }
+
+    @Override
+    public void accept(BookStatistics stats) {
+        stats.visit(this);
     }
 
 

@@ -31,4 +31,9 @@ public class Table implements Element{
     public Element get(int i) {
         return null;
     }
+
+    @Override
+    public void accept(BookStatistics stats) {
+        stats.visit(this);
+    }
 }

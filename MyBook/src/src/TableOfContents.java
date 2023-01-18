@@ -22,4 +22,9 @@ public class TableOfContents implements Element {
     public Element get(int i) {
         return null;
     }
+
+    @Override
+    public void accept(BookStatistics stats) {
+
+    }
 }

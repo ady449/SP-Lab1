@@ -41,6 +41,11 @@ public class Paragraph implements Element {
         return null;
     }
 
+    @Override
+    public void accept(BookStatistics stats) {
+        stats.visit(this);
+    }
+
     public void setAlignStrategy(AlignStrategy align) {
         description = align + description;
     }

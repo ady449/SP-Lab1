@@ -19,7 +19,9 @@ public class Image implements Element {
             e.printStackTrace();
         }
     }
-
+    public Image(){
+        image = "fara imagine";
+    }
     @Override
     public String toString() {
         return "Image: " + image;
@@ -43,5 +45,10 @@ public class Image implements Element {
     @Override
     public Element get(int i) {
         return null;
+    }
+
+    @Override
+    public void accept(BookStatistics stats) {
+        stats.visit(this);
     }
 }

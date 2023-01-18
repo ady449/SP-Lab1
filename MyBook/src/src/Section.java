@@ -40,4 +40,11 @@ public class Section implements Element {
 
         return elements.get(i);
     }
+
+
+    public void accept(BookStatistics stats) {
+        for(Element e : this.elements){
+            e.accept(stats);
+        }
+    }
 }
